@@ -28,8 +28,8 @@ export class EstudiosService {
     return this.httpClient.post<Estudios>(this.EstudiosURL+'new', estudios);
   }
     //Actualizar
-    public update(id:Number, estudios:Estudios):Observable<Estudios>{
-      return this.httpClient.put<any>(this.EstudiosURL+`editar/${id}`, estudios);
+    public update(estudios:Estudios):Observable<Estudios>{
+      return this.httpClient.put<any>(this.EstudiosURL+'editar', estudios);
     }
     //borrar
     public delete(id:number):Observable<any>{

@@ -20,7 +20,10 @@
 </div>
 <div class="mb-3">
     <label for="nivel">Nivel del titulo</label>
-    <select name="OS" class="form-control" id ="nivel" name ="nivel">
+    <select name="OS" 
+    class="form-control" 
+    id ="nivel" 
+    formControlName ="nivel">
         <option value="Medio">Medio</option> 
         <option value="Superior">Superior</option>
     </select>
@@ -31,9 +34,8 @@
     class="form-control"
     type="Date" 
     id ="inicio" 
-    name="inicio"
+    formControlName="inicio"
     >
-    
 </div>
 <div class="mb-3">
     <label for="nivel">Fecha de inicio</label>
@@ -41,9 +43,8 @@
     class="form-control"
     type="Date" 
     id ="final" 
-    name="final"
-    >
-    
+    formControlName="final"
+    >  
 </div>
 <button type="submit" class="btn btn-primary">
     Nueva estudio

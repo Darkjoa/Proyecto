@@ -19,7 +19,16 @@ import { EstudiosComponent } from './components/Estudios/estudios/estudios.compo
 import { FormEstudiosComponent } from './components/Estudios/Form-Estudios/form-estudios/form-estudios.component';
 import { EstudiosListComponent } from './components/Estudios/estudios-list/estudios-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FrenteEstudiosComponent } from './components/estudios/frente-estudios/frente-estudios.component';
+import { ExperienciaComponent } from './components/Experiencia/experiencia/experiencia.component';
+import { ExperienciaListComponent } from './components/Experiencia/experiencia-list/experiencia-list.component';
+import { FormExperienciaComponent } from './components/Experiencia/form-experiencia/form-experiencia.component';
+import { FormHabilidadesComponent } from './components/Habilidades/form-habilidades/form-habilidades.component';
+import { HabilidadesComponent } from './components/Habilidades/habilidades/habilidades.component';
+import { HabilidadesListComponent } from './components/Habilidades/habilidades-list/habilidades-list.component';
+import { SobremiComponent } from './components/Sobremi/sobremi/sobremi.component';
+import { SobremiListComponent } from './components/Sobremi/sobremi-list/sobremi-list.component';
+import { FormSobremiComponent } from './components/Sobremi/form-sobremi/form-sobremi.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +38,16 @@ import { FrenteEstudiosComponent } from './components/estudios/frente-estudios/f
     PersonaComponent,
     FooterComponent,
     FrontPageComponent,
-    FrenteEstudiosComponent,
-
+    ExperienciaComponent,
+    ExperienciaListComponent,
+    FormExperienciaComponent,
+    FormHabilidadesComponent,
+    HabilidadesComponent,
+    HabilidadesListComponent,
+    SobremiComponent,
+    SobremiListComponent,
+    FormSobremiComponent,
+    
   ],
   imports: [
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from '../../Models/persona';
-import { PersonasService } from '../../Service/personas.service';
+import { Social } from 'src/app/Models/social';
+import { SocialService } from 'src/app/Service/social.service';
+import { Persona } from '../../../Models/persona';
+import { PersonasService } from '../../../Service/personas.service';
 
 @Component({
   selector: 'app-persona',
@@ -13,12 +15,28 @@ persona : Persona = {
   apellido: '',
   imaUrl: '',
   edad: 0,
-  estudios:[]
-};
-  constructor( private personaService: PersonasService) { 
+  estudios:[],
+  experiencia:[],
+  habilidades:[],
+  sobremi:[],
+  social:[]
+
+}
+social: Social = {
+  facebook: '' ,
+  instagram: '',
+  linkedin: '',
+  github: '',
+  email: '',
+}
+;
+  constructor( private personaService: PersonasService, private socialService: SocialService) { 
     this.personaService.verPersona(1)
     .subscribe
     ((persona)=>(this.persona = persona));
+
+    this.socialService.verSocial().subscribe
+    ((social)=>(this.social=social))
   }
 
 

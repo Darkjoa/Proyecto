@@ -4,5 +4,7 @@
     <!-- usamos el datepipe con formato utc para evitar problemas con la database -->
     <td >{{estudios.inicio | date: 'dd/MM/yyyy':'UTC'}}</td>
     <td >{{estudios.final | date: 'dd/MM/yyyy':'UTC'}}</td>
-    <td ><button class="btn btn-outline-warning boton" routerLink="estudios/editar/{{estudios.id}}">Editar</button></td>
+    <td ><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
+    <td ><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td>
+
 </div>

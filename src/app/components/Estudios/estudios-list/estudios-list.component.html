@@ -10,10 +10,11 @@
         <div class="accordion-body">
 <button class="btn btn-success" (click)="toggleForm()"> Nuevo</button>
 <app-form-estudios
-*ngIf="mostrarFormulario"
+#formEstudios
 (nuevoEstudio)="crear($event)"
 
 ></app-form-estudios>
+
 <h2>Nivel Medio</h2>
 <table class="table" style="color:white;">
   <thead>
@@ -24,8 +25,13 @@
       <th width="25%" scope="col">Fecha final</th>
     </tr>
   </thead>
-  
-<app-estudios *ngFor="let estudios of estudios" [estudios]="estudios">
+<app-estudios 
+*ngFor="let estudios of estudios" 
+[estudios]="estudios"
+(borrarEstudios)="borrarEstudio($event)"
+(editarEstudios)="editarEstudio($event)"
+
+>
 </app-estudios>
 </table>
 <h2>Nivel Superior</h2>
@@ -38,10 +44,5 @@
       <th width="25%" scope="col">Fecha final</th>
     </tr>
   </thead>
-  <app-estudios *ngFor="let estudios of estudios where estudios.nivel=='Superior'" [estudios]="estudios"></app-estudios>
-</table>
+  <app-estudios *ngFor="let estudios of estudios" [estudios]="estudios"></app-estudios>
 
-</div>
-</div>
-</div>
-</div>

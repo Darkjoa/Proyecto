@@ -1,2 +1,81 @@
-<h1>Hola {{ persona.nombre }}</h1>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="{{persona.imaUrl}}" class="rounded-circle" alt="Joaquin cornelatti" height="150px" width="150px">
+      
+      <div class="low">
+        <a class="navbar-brand ResaltarNegro">{{persona.nombre}} {{persona.apellido}}</a> 
+        <button class="btn btn-outline-warning boton" routerLink="estudios/editar/{{persona.id}}">Editar</button>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <div class="wrapper">
+          <br>
+          <a class="button" style="text-decoration: none;"href="https://www.facebook.com/joaquin.cornelatti" style=" text-decoration: none;">
+            <div>
+              <div class="icon" style="color:cyan">
+                 <i class="fab fa-facebook-f" ></i>
+              </div>
+              <span>
+                 Facebook</span>
+           </div>
+             </a>
+             <a class="button" style="text-decoration: none;"href="https://www.instagram.com/joaquincornelatti/" style=" text-decoration: none;">
+              <div style="color:pink">
+                <div class="icon">
+                   <i class="fab fa-instagram"></i>
+                </div>
+                <span>Instagram</span>
+             </div>
+               </a>
+               <a class="button" style="text-decoration: none;"href="https://github.com/Darkjoa" style=" text-decoration: none;">
+
+                <div>
+                  <div class="icon" style="color:white">
+                   <i class='fab fa-github'></i>
+                  </div>
+                 <span>GitHub</span>
+              </div>
+      
+              </a>
+              <a class="button" style="text-decoration: none;"href="mailto:Darkjoa.jc@gmail.com" style=" text-decoration: none;">
+                <div >
+                  <div>
+                    <div class="icon" style="color:rgb(59, 0, 0)">
+                       <i class="fas fa-envelope"></i>
+                    </div>
+                   <span>Mail</span>
+                </div>
+              </div>
+              </a>
+              <a class="button" style="text-decoration: none;"href="https://www.linkedin.com/in/joaquin-cornelatti-17a7b8200/" style=" text-decoration: none;">
+                <div >
+                  <div>
+                    <div class="icon" style="color:cyan">
+                      <i class='fab fa-linkedin'></i>
+                    </div>
+                   <span>Linkedin</span>
+                </div>
+              </div>
+              </a>
+              <button class="btn btn-outline-warning boton" routerLink="estudios/editar/{{persona.id}}">Editar</button>     
+       </div>
+      </div>
+      <br>
+      <br>
+      <div class="collapse navbar-collapse show" id="navbarBasic">
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+          <li class="nav-item">
+            
+          </li>
+          <li class="nav-item">
+            
+          </li>
+          <li class="nav-item">
+            
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-outline-success" style="height:50px; width:120px; border-radius: 30px; font-size:20px">Login</button>
+        </form>
+      </div>
+    </div>
+  </nav>
 <app-estudios-list [estudios]="persona.estudios"></app-estudios-list>

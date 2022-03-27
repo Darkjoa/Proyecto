@@ -1,36 +1,51 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-import { EstudiosService } from '../../Service/estudios.service';
-import { Estudios } from '../../Models/estudios';
+import { AfterViewInit,Component, Input, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { EstudiosService } from 'src/app/Service/estudios.service';
+import { Estudios } from 'src/app/Models/estudios';
+import { FormEstudiosComponent } from '../Form-Estudios/form-estudios/form-estudios.component';
 @Component({
   selector: 'app-estudios-list',
   templateUrl: './estudios-list.component.html',
   styleUrls: ['./estudios-list.component.css']
 })
-export class EstudiosListComponent implements OnInit {
-
+export class EstudiosListComponent{
+  @ViewChild("formEstudios") formEstudios!: FormEstudiosComponent;
   @Input() estudios: Estudios[]=[];
-
-  mostrarFormulario: boolean = false;
-
   constructor(private estudiosService: EstudiosService) { }
 
-
-
-  ngOnInit(): void {
-    
-  }
-
   toggleForm(){
-    this.mostrarFormulario =!this.mostrarFormulario;
+    this.formEstudios.toggleForm();
   }
 
   crear(estudios: Estudios){
-    this.estudiosService
+  if(estudios.id){
+    this.estudiosService.update(estudios).subscribe
+    ((estudioEditado)=> {
+      this.ActualizarEstudio(estudioEditado)
+    });
+}
+else{
+  this.estudiosService
     .save(estudios)
     .subscribe((nuevoEstudio)=>
     this.estudios.push(nuevoEstudio)
     );
-  }
+}
 
+    
+  }
+  borrarEstudio(id:number){
+  this.estudiosService.delete(id).
+  subscribe(()=>{
+    this.estudios = this.estudios.filter((t)=> t.id !== id)
+  });
+  }
+  ActualizarEstudio(estudios:Estudios){
+    for(let i=0; i<this.estudios.length; i++){
+      this.estudios[i]= estudios;
+      break;
+    }
+  }
+  editarEstudio(estudios:Estudios){
+    this.formEstudios.setEstudio(estudios);
+  }
 }
