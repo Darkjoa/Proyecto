@@ -1,0 +1,63 @@
+<div class="accordion" id="accordionBasic">
+    <div class="accordion-item gris">
+      <h2 class="accordion-header " id="headingOne">
+        <button class="accordion-button oscuro collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        <h4>Estudios</h4>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <h2>Titulos</h2>
+        <div class="accordion-body">
+            <!-- .table-{color} can be use with .table, thead, tbody, tr, th and td -->
+            
+            <h2>Nivel Medio</h2>
+              <table class="table" style="color:white;">
+                <thead>
+                  <tr>
+                    <th width="25%" scope="col">Titulo</th>
+                    <th width="25%" scope="col">Escuela</th>
+                    <th width="25%" scope="col">Fecha de inicio</th>
+                    <th width="25%" scope="col">Fecha final</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let estudio of estudios">
+                    <td *ngIf="estudio.nivel=='Medio'">{{estudio.titulo}}</td>
+                    <td *ngIf="estudio.nivel=='Medio'">{{estudio.escuela}}</td>
+                    <!-- usamos el datepipe con formato utc para evitar problemas con la database -->
+                    <td *ngIf="estudio.nivel=='Medio'">{{estudio.inicio | date: 'dd/MM/yyyy':'UTC'}}</td>
+                    <td *ngIf="estudio.nivel=='Medio'">{{estudio.final | date: 'dd/MM/yyyy':'UTC'}}</td>
+                    <td *ngIf="estudio.nivel=='Medio'"><button class="btn btn-outline-warning boton" routerLink="estudios/editar/{{estudio.id}}">Editar</button></td>
+                    
+                   <!-- <td *ngIf="estudio.nivel=='Medio'"> <button class="btn btn-outline-danger" (click)="borrar(estudio.id!)"><i class="fa-solid fa-trash-can">Eliminar</i></button></td>-->
+  
+                  </tr>
+                </tbody>
+                
+              </table>
+              <h2>Nivel Superior</h2>
+              <table class="table" style="color:white;">
+                <thead>
+                  <tr>
+                    <th width="25%" scope="col">Titulo</th>
+                    <th width="25%" scope="col">Escuela</th>
+                    <th width="25%" scope="col">Fecha de inicio</th>
+                    <th width="25%" scope="col">Fecha final</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let estudio of estudios">
+                    <td *ngIf="estudio.nivel=='Superior'">{{estudio.titulo}}</td>
+                    <td *ngIf="estudio.nivel=='Superior'">{{estudio.escuela}}</td>
+                    <!-- usamos el datepipe con formato utc para evitar problemas con la database -->
+                    <td *ngIf="estudio.nivel=='Superior'">{{estudio.inicio | date: 'dd/MM/yyyy':'UTC'}}</td>
+                    <td *ngIf="estudio.nivel=='Superior'">{{estudio.final | date: 'dd/MM/yyyy':'UTC'}}</td>
+                    <td *ngIf="estudio.nivel=='Superior'"><button class="btn btn-outline-warning boton"routerLink="estudios/editar/{{estudio.id}}">Editar</button></td>
+                    <!--<td *ngIf="estudio.nivel=='Superior'"> <button class="btn btn-outline-danger" (click)="borrar(estudio.id!)"><i class="fa-solid fa-trash-can">Eliminar</i></button></td> -->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+        </div>
+       </div>
