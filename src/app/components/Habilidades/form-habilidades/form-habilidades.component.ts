@@ -8,9 +8,13 @@ import { Habilidades } from 'src/app/Models/habilidades';
   styleUrls: ['./form-habilidades.component.css']
 })
 export class FormHabilidadesComponent{
-  @Output() nuevaHabilidad: EventEmitter<Habilidades> = new EventEmitter();
-  form: FormGroup;
   mostrarFormulario: boolean = false;
+
+  @Output() nuevaHabilidad: EventEmitter<Habilidades> = new EventEmitter();
+  
+  form: FormGroup;
+
+  
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       id:[0],

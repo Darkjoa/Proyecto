@@ -1,13 +1,5 @@
-<div >
-    <h3>{{habilidades.habilidad}}</h3>
-    <circle-progress
-      [percent]="0"
-      [radius]="100"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="8"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="300"
-    ></circle-progress>
-</div>
+{{habilidades.habilidad}}
+{{habilidades.tipo}}
+{{habilidades.porcentaje}}
+<td ><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
+<td ><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input,  ViewChild } from '@angular/core';
 import { Habilidades } from 'src/app/Models/habilidades';
 import { HabilidadesService } from 'src/app/Service/habilidades.service';
 import { FormHabilidadesComponent } from '../form-habilidades/form-habilidades.component';
@@ -17,6 +17,7 @@ export class HabilidadesListComponent{
   toggleFormHabilidades(){
     this.formHabilidades.toggleForm();
   }
+
   crear(habilidades:Habilidades){
     if(habilidades.id){
       this.habilidadesService.update(habilidades)
@@ -26,14 +27,15 @@ export class HabilidadesListComponent{
     }
     else{
       this.habilidadesService.save(habilidades)
-      .subscribe((nuevaHabilidad)=>
-      this.habilidades.push(nuevaHabilidad)
+      .subscribe((h)=>
+      this.habilidades.push(h)
       );
     }
   }
 
   borrarHabilidad(id:number){
-    this.habilidadesService.delete(id).subscribe(()=>{
+    this.habilidadesService.delete(id)
+    .subscribe(()=>{
       this.habilidades = this.habilidades.filter((t)=> t.id !== id)
     });
   }
