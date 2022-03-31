@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)"
+*ngIf="mostrarFormulario"
+>
+<div class="mb-3">
+    <label class="form-label" for="facebook">Facebook</label>
+    <input
+    class="form-control"
+    type="facebook"
+    formControlName="facebook"
+    id="facebook"
+  />
+</div>
+<div class="mb-3">
+    <label class="form-label" for="instagram">Instragram</label>
+    <input
+    class="form-control"
+    type="instagram"
+    formControlName="instagram"
+    id="instagram"
+  />
+</div>
+<div class="mb-3">
+    <label class="form-label" for="email">Email</label>
+    <input
+    class="form-control"
+    type="email"
+    formControlName="email"
+    id="email"
+  />
+</div>
+<div class="mb-3">
+    <label class="form-label" for="github">GitHub</label>
+    <input
+    class="form-control"
+    type="github"
+    formControlName="github"
+    id="github"
+  />
+</div>
+<div class="mb-3">
+    <label class="form-label" for="linkedin">Linkedin</label>
+    <input
+    class="form-control"
+    type="linkedin"
+    formControlName="linkedin"
+    id="linkedin"
+  />
+</div>
+<button type="submit" class="btn btn-success">Enviar</button>
+</form>

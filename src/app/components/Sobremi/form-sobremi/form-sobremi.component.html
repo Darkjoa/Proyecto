@@ -1,1 +1,23 @@
-<p>form-sobremi works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)"
+*ngIf="mostrarFormulario"
+>
+<div class="mb-3">
+    <label class="form-label" for="nombreDato">Tipo de dato</label>
+    <input
+    class="form-control"
+    type="nombreDato"
+    formControlName="nombreDato"
+    id="nombreDato"
+  />
+</div>
+<div class="mb-3">
+    <label class="form-label" for="dato">Dato</label>
+    <input
+    class="form-control"
+    type="dato"
+    formControlName="dato"
+    id="dato"
+  />
+</div>
+<button type="submit" class="btn btn-success">Enviar</button>  
+</form>

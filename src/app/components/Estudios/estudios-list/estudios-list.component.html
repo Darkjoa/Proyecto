@@ -1,48 +1,13 @@
-<div class="accordion" id="accordionBasic">
-    <div class="accordion-item gris">
-      <h2 class="accordion-header " id="headingOne">
-        <button class="accordion-button oscuro collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-        <h4>Estudios</h4>
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-        <h2>Titulos</h2>
-        <div class="accordion-body">
-<button class="btn btn-success" (click)="toggleForm()"> Nuevo</button>
+<button class="btn btn-success" (click)="toggleFormEstudios()"> Nuevo</button>
 <app-form-estudios
 #formEstudios
 (nuevoEstudio)="crear($event)"
-
 ></app-form-estudios>
-
-<h2>Nivel Medio</h2>
-<table class="table" style="color:white;">
-  <thead>
-    <tr>
-      <th width="25%" scope="col">Titulo</th>
-      <th width="25%" scope="col">Escuela</th>
-      <th width="25%" scope="col">Fecha de inicio</th>
-      <th width="25%" scope="col">Fecha final</th>
-    </tr>
-  </thead>
 <app-estudios 
 *ngFor="let estudios of estudios" 
 [estudios]="estudios"
 (borrarEstudios)="borrarEstudio($event)"
 (editarEstudios)="editarEstudio($event)"
+></app-estudios>
 
->
-</app-estudios>
-</table>
-<h2>Nivel Superior</h2>
-<table class="table" style="color:white;">
-  <thead>
-    <tr>
-      <th width="25%" scope="col">Titulo</th>
-      <th width="25%" scope="col">Escuela</th>
-      <th width="25%" scope="col">Fecha de inicio</th>
-      <th width="25%" scope="col">Fecha final</th>
-    </tr>
-  </thead>
-  <app-estudios *ngFor="let estudios of estudios" [estudios]="estudios"></app-estudios>
 

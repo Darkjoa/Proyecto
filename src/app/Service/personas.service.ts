@@ -24,8 +24,8 @@ export class PersonasService {
     return this.httpClient.post<Persona>(this.personaURL+'new', persona);
   }
     //Actualizar
-    public update(id:number, persona:Persona):Observable<Persona>{
-      return this.httpClient.put<any>(this.personaURL+`editar/${id}`, persona);
+    public update(persona:Persona):Observable<Persona>{
+      return this.httpClient.put<any>(this.personaURL+'editar', persona);
     }
     //borrar
     public delete(id:number):Observable<any>{

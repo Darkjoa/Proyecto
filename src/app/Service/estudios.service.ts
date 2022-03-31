@@ -29,7 +29,7 @@ export class EstudiosService {
   }
     //Actualizar
     public update(estudios:Estudios):Observable<Estudios>{
-      return this.httpClient.put<any>(this.EstudiosURL+'editar', estudios);
+      return this.httpClient.put<Estudios>(this.EstudiosURL+"editar", estudios);
     }
     //borrar
     public delete(id:number):Observable<any>{

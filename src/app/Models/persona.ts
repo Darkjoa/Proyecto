@@ -9,6 +9,7 @@ export interface Persona{
         nombre: string;
         apellido: string;
         imaUrl: string;
+        portadaImaUrl: string;
         edad: number;
         estudios:Estudios[];
         experiencia:Experiencia[];

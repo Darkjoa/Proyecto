@@ -1,0 +1,9 @@
+<app-form-social
+#formSocial
+(nuevoSocial)="crear($event)"
+></app-form-social>
+<app-social
+*ngFor="let social of social"
+[social]="social"
+(editarSocial)="editarSocial($event)"
+></app-social>

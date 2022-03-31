@@ -17,11 +17,11 @@ export class FormEstudiosComponent {
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       id: [0],
-      titulo: ['', Validators.required],
-      escuela: ['', Validators.required],
-      nivel: ['', Validators.required],
-      inicio: [new Date(), Validators.required],
-      final: [new Date(), Validators.required]
+      titulo: ['', [Validators.required]],
+      escuela: ['', [Validators.required]],
+      nivel: ['', [Validators.required]],
+      inicio: [new Date(),[Validators.required]],
+      final: [new Date(), [Validators.required]],
     });
    }
 
@@ -34,8 +34,8 @@ export class FormEstudiosComponent {
     } else{
       console.log('form invalido')
     }
-
   }
+  
   setEstudio(estudios: Estudios){
     this.form.patchValue({
       id: estudios.id,

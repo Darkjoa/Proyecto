@@ -1,1 +1,42 @@
-<p>form-experiencia works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)"
+*ngIf="mostrarFormulario"
+>
+<div class="mb-3">
+    <label class="form-label" for="cargo">Cargo</label>
+    <input
+    class="form-control"
+    type="cargo"
+    formControlName="cargo"
+    id="cargo"
+  />
+</div>
+<div class="mb-3">
+    <label class="form-label" for="empresa">Empresa</label>
+    <input
+    class="form-control"
+    type="empresa"
+    formControlName="empresa"
+    id="empresa"
+  />
+</div>
+<div class="mb-3">
+    <label for="inicio">Fecha de inicio</label>
+    <input 
+    class="form-control"
+    type="Date" 
+    id ="inicio" 
+    formControlName="inicio"
+    >
+</div>
+<div class="mb-3">
+    <label for="nivel">Fecha de salida</label>
+    <input 
+    class="form-control"
+    type="Date" 
+    id ="final" 
+    formControlName="final"
+    >  
+</div>
+<button type="submit" class="btn btn-success">Enviar</button>
+    
+</form>

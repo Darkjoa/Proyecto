@@ -1,1 +1,11 @@
-<p>sobremi-list works!</p>
+<button class="btn btn-success" (click)="toggleFormSobreMi()"> Nuevo</button>
+<app-form-sobremi
+#formSobreMi
+(nuevoSobremi)="crear($event)"
+></app-form-sobremi>
+<app-sobremi
+*ngFor="let sobremi of sobremi"
+[sobremi]="sobremi"
+(borrarSobremi)="borrarSobremi($event)"
+(editarSobremi)="editarSobremi($event)"
+></app-sobremi>

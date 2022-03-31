@@ -1,1 +1,36 @@
-<p>form-habilidades works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)"
+*ngIf="mostrarFormulario"
+>
+<div class="mb-3">
+    <label class="form-label" for="habilidad">Habilidad</label>
+    <input
+    class="form-control"
+    type="habilidad"
+    formControlName="habilidad"
+    id="habilidad"
+  />
+</div>
+<div class="mb-3">
+    <label class="form-label" for="porcentaje">Porcentaje</label>
+    <input
+    class="form-control"
+    type="number"
+    formControlName="porcentaje"
+    id="porcentaje"
+  />
+</div>
+<div class="mb-3">
+    <label for="tipo">Tipo de habilidad</label>
+    <select name="OS" 
+    class="form-control" 
+    id ="tipo" 
+    formControlName ="tipo">
+        <option value="Programacion">Programacion</option> 
+        <option value="Programacion Web">Programacion Web</option>
+        <option value="Base de datos">Base de datos</option>
+        <option value="Idiomas">Idioma</option>
+        <option value="Otros">Otros</option>
+    </select>
+</div>
+<button type="submit" class="btn btn-success">Enviar</button>  
+</form>

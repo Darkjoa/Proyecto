@@ -6,19 +6,17 @@ import { Estudios } from '../../../Models/estudios';
   templateUrl: './estudios.component.html',
   styleUrls: ['./estudios.component.css']
 })
-export class EstudiosComponent implements OnInit {
+export class EstudiosComponent{
 @Input() estudios!:Estudios;
 @Output() borrarEstudios: EventEmitter <number> = new EventEmitter();
 @Output() editarEstudios: EventEmitter <Estudios> = new EventEmitter();
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
   borrar(): void {
+
     this.borrarEstudios.emit(this.estudios.id);
   }
   editar(): void {
-    this.editarEstudios.emit(this.estudios)
+    this.editarEstudios.emit(this.estudios);
   }
 }

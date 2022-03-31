@@ -28,6 +28,10 @@ import { HabilidadesListComponent } from './components/Habilidades/habilidades-l
 import { SobremiComponent } from './components/Sobremi/sobremi/sobremi.component';
 import { SobremiListComponent } from './components/Sobremi/sobremi-list/sobremi-list.component';
 import { FormSobremiComponent } from './components/Sobremi/form-sobremi/form-sobremi.component';
+import { SocialComponent } from './components/social/social/social.component';
+import { FormSocialComponent } from './components/social/form-social/form-social.component';
+import { SocialListaComponent } from './components/social/social-lista/social-lista.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,9 @@ import { FormSobremiComponent } from './components/Sobremi/form-sobremi/form-sob
     SobremiComponent,
     SobremiListComponent,
     FormSobremiComponent,
+    SocialComponent,
+    FormSocialComponent,
+    SocialListaComponent,
     
   ],
   imports: [
@@ -58,7 +65,19 @@ import { FormSobremiComponent } from './components/Sobremi/form-sobremi/form-sob
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+        // Specify ng-circle-progress as an import
+        NgCircleProgressModule.forRoot({
+          // set defaults here
+          radius: 100,
+          outerStrokeWidth: 16,
+          innerStrokeWidth: 8,
+          outerStrokeColor: "#78C000",
+          innerStrokeColor: "#C7E596",
+          animationDuration: 300,
+
+        })
+
   ],
   providers: [],
   bootstrap: [AppComponent]

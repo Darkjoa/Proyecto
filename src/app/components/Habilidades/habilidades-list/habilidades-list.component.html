@@ -1,1 +1,12 @@
-<p>habilidades-list works!</p>
+<button class="btn btn-success" (click)="toggleFormHabilidades()"> Nuevo</button>
+<app-form-habilidades
+#formHabilidades
+(nuevaHabilidad)="crear($event)"
+></app-form-habilidades>
+<app-habilidades
+*ngFor="let habilidades of habilidades"
+[habilidades]="habilidades"
+(borrarHabilidad)="borrarHabilidad($event)"
+(editarHabilidad)="editarHabilidad($event)"
+>
+</app-habilidades>

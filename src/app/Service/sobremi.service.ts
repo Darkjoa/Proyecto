@@ -9,7 +9,7 @@ import {Sobremi} from '../Models/sobremi'
 export class SobremiService {
 
  //se conecta el service
- SobreMiUrl = 'http://localhost:8080/SobreMi/'
+ SobreMiUrl = 'http://localhost:8080/sobremi/'
  constructor(private httpClient: HttpClient) { }
 
 
@@ -26,8 +26,8 @@ export class SobremiService {
   return this.httpClient.get<any>(this.SobreMiUrl+ `buscar/${id}`)
 }
    //Actualizar
-   public update(id:number, sobremi:Sobremi):Observable<Sobremi>{
-     return this.httpClient.put<any>(this.SobreMiUrl+`editar/${id}`, sobremi);
+   public update(sobremi:Sobremi):Observable<Sobremi>{
+     return this.httpClient.put<any>(this.SobreMiUrl+'editar', sobremi);
    }
    //borrar
    public delete(id:number):Observable<any>{

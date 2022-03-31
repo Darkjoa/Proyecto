@@ -27,8 +27,8 @@ export class SocialService {
   return this.httpClient.get<any>(this.SocialUrl+ `buscar/${id}`)
 }
    //Actualizar
-   public update(id:number, social:Social):Observable<Social>{
-     return this.httpClient.put<any>(this.SocialUrl+`editar/${id}`, social);
+   public update(social:Social):Observable<Social>{
+     return this.httpClient.put<any>(this.SocialUrl+'editar', social);
    }
    //borrar
    public delete(id:number):Observable<any>{

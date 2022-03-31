@@ -20,14 +20,13 @@ export class HabilidadesService {
   //Crear
   public save(habilidades:Habilidades):Observable<Habilidades>{
     return this.httpClient.post<Habilidades>(this.HabilidadesURL+'new', habilidades);
-    
   }
   public buscarHabilidades(id:number):Observable<any>{
     return this.httpClient.get<any>(this.HabilidadesURL+ `buscar/${id}`)
   }
     //Actualizar
-    public update(id:number, habilidades:Habilidades):Observable<Habilidades>{
-      return this.httpClient.put<any>(this.HabilidadesURL+`editar/${id}`, habilidades);
+    public update(habilidades:Habilidades):Observable<Habilidades>{
+      return this.httpClient.put<any>(this.HabilidadesURL+'editar', habilidades);
     }
     //borrar
     public delete(id:number):Observable<any>{
