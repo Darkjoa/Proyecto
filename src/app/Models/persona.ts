@@ -1,6 +1,7 @@
 import { Estudios } from "./estudios";
 import { Experiencia } from "./experiencia";
 import { Habilidades } from "./habilidades";
+import { Proyectos } from "./proyectos";
 import { Sobremi } from "./sobremi";
 import { Social } from "./social";
 export interface Persona{
@@ -16,5 +17,6 @@ export interface Persona{
         habilidades:Habilidades[];
         sobremi:Sobremi[];
         social:Social[];
+        proyectos:Proyectos[];
         
 }

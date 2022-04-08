@@ -48,5 +48,8 @@
           </div>
         </div>
         </a>
-        <button class="btn btn-outline-warning boton"(click)="editar()">Editar</button>
+        <div *ngIf="isAdmin">
+          <td><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>   
+            </div>
+        
        </div>

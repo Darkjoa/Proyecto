@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Sobremi } from 'src/app/Models/sobremi';
 import { SobremiService } from 'src/app/Service/sobremi.service';
+import { TokenService } from 'src/app/Service/token.service';
 import { FormSobremiComponent } from '../form-sobremi/form-sobremi.component';
 
 @Component({
@@ -11,8 +12,12 @@ import { FormSobremiComponent } from '../form-sobremi/form-sobremi.component';
 export class SobremiListComponent{
 @ViewChild("formSobreMi") formSobreMi!: FormSobremiComponent;
 @Input() sobremi: Sobremi[]=[];
-
-  constructor(private sobremiService: SobremiService) { }
+isLogged = false;
+isAdmin = false;
+  constructor(private sobremiService: SobremiService, private tokenService: TokenService) {
+    this.isLogged = this.tokenService.isLogged();
+    this.isAdmin = this.tokenService.isAdmin();
+   }
   toggleFormSobreMi(){
     this.formSobreMi.toggleForm();
   }

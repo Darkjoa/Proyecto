@@ -37,7 +37,12 @@ constructor(private formBuilder: FormBuilder) {
      console.log('form invalido')
    }
  }
-
+ Cancelar(): void{
+    
+  this.form.reset();
+  this.mostrarFormulario=false;
+  
+ }
  setSocial(social: Social){
    this.form.patchValue({
      id: social.id,

@@ -1,4 +1,7 @@
-<button class="btn btn-success" (click)="toggleFormExperiencia()"> Nuevo</button>
+<div *ngIf="isAdmin">
+    <button class="btn btn-success" (click)="toggleFormExperiencia()"> Nuevo</button>
+</div>
+
 <app-form-experiencia
 #formExperiencia
 (nuevaExperiencia)="crear($event)"

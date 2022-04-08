@@ -1,5 +1,4 @@
 
-<br>
 <h3>{{experiencia.cargo}}</h3>
 <br>
 <td>{{experiencia.empresa}}</td>
@@ -8,6 +7,8 @@
 <br>
 <td >{{experiencia.final | date: 'dd/MM/yyyy':'UTC'}}</td>
 <br>
+<div *ngIf="isAdmin">
 <td><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
 <td><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td>
+</div>
 

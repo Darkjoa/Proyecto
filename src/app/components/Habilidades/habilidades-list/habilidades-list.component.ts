@@ -1,6 +1,7 @@
 import { Component, Input,  ViewChild } from '@angular/core';
 import { Habilidades } from 'src/app/Models/habilidades';
 import { HabilidadesService } from 'src/app/Service/habilidades.service';
+import { TokenService } from 'src/app/Service/token.service';
 import { FormHabilidadesComponent } from '../form-habilidades/form-habilidades.component';
 
 @Component({
@@ -11,8 +12,11 @@ import { FormHabilidadesComponent } from '../form-habilidades/form-habilidades.c
 export class HabilidadesListComponent{
 @ViewChild("formHabilidades") formHabilidades!: FormHabilidadesComponent;
 @Input() habilidades: Habilidades[]=[];
-
-  constructor(private habilidadesService: HabilidadesService) { }
+isLogged = false;
+isAdmin = false;
+  constructor(private tokenService: TokenService, private habilidadesService: HabilidadesService) 
+  {this.isLogged = this.tokenService.isLogged();
+    this.isAdmin = this.tokenService.isAdmin(); }
 
   toggleFormHabilidades(){
     this.formHabilidades.toggleForm();

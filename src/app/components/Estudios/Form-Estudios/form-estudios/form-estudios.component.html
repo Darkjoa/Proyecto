@@ -33,7 +33,7 @@
     <label for="inicio">Fecha de inicio</label>
     <input 
     class="form-control"
-    type="Date" 
+    type="date" 
     id ="inicio" 
     formControlName="inicio"
     >
@@ -42,10 +42,11 @@
     <label for="final">Fecha de egreso</label>
     <input 
     class="form-control"
-    type="Date" 
+    type="date" 
     id ="final" 
     formControlName="final"
     >  
 </div>
-<button type="submit" class="btn btn-success">Enviar</button>  
+<button type="submit" class="btn btn-success">Enviar</button> 
+<button type="button" style="margin-left: 5px" class="btn btn-danger "(click)="Cancelar()">Cancelar</button>
 </form>

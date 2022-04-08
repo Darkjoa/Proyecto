@@ -1,5 +1,7 @@
 <p>
     {{sobremi.nombreDato}}: {{sobremi.dato}}
 </p>
-<td ><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
-<td ><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td>
+<div *ngIf="isAdmin">
+    <td><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
+    <td><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td>    
+      </div>

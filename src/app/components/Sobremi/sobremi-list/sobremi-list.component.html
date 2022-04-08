@@ -1,4 +1,7 @@
-<button class="btn btn-success" (click)="toggleFormSobreMi()"> Nuevo</button>
+<div *ngIf="isAdmin">
+    <button class="btn btn-success" (click)="toggleFormSobreMi()"> Nuevo</button>
+</div>
+
 <app-form-sobremi
 #formSobreMi
 (nuevoSobremi)="crear($event)"

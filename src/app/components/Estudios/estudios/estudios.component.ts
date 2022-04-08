@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input,  Output } from '@angular/core';
 import { Estudios } from 'src/app/Models/estudios';
+import { TokenService } from 'src/app/Service/token.service';
 
 @Component({
   selector: 'app-estudios',
@@ -10,13 +11,23 @@ export class EstudiosComponent{
 @Input() estudios!:Estudios;
 @Output() borrarEstudios: EventEmitter <number> = new EventEmitter();
 @Output() editarEstudios: EventEmitter <Estudios> = new EventEmitter();
-  constructor() { }
+isLogged = false;
+isAdmin = false;
+  constructor(private tokenService: TokenService) {
+    this.isLogged = this.tokenService.isLogged();
+    this.isAdmin = this.tokenService.isAdmin();
+   }
 
   borrar(): void {
-
-    this.borrarEstudios.emit(this.estudios.id);
+    if(this.isAdmin){
+      this.borrarEstudios.emit(this.estudios.id);
+    }
+    
   }
   editar(): void {
-    this.editarEstudios.emit(this.estudios);
+    if(this.isAdmin){
+      this.editarEstudios.emit(this.estudios);
+    }
+    
   }
 }

@@ -26,7 +26,10 @@ background-size: cover;
 background-position: center;
 min-height: 20vh;
 }
-
+.caja{
+  border-style: solid;
+  border-color: red;
+}
 .ResaltarNegro
 {
     background-color: #000000;
@@ -35,4 +38,12 @@ min-height: 20vh;
     font-size: 30px;
     padding: 5px;
     
+}
+footer {
+  color: white;
+  background-color: #1A1A1A;
+  margin-top:10px;
+  position: absolute;
+  margin-bottom: 0;
+  left: 0;
 }

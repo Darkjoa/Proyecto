@@ -29,7 +29,12 @@ export class FormSobremiComponent{
        console.log('form invalido')
      }
    }
-
+   Cancelar(): void{
+    
+    this.form.reset();
+    this.mostrarFormulario=false;
+    
+   }
    setSobremi(sobremi: Sobremi){
      this.form.patchValue({
        id: sobremi.id,

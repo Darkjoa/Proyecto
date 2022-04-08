@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)"
+*ngIf="mostrarFormulario"
+>
+<div class="mb-3">
+    <label class="form-label" for="nombre">Nombre del proyecto</label>
+    <input
+    class="form-control"
+    type="text"
+    formControlName="nombre"
+    id="nombre"
+  />
+</div>
+
+<div class="mb-3">
+    <label class="form-label" for="imagenProyectoUrl">Url de imagen de proyecto</label>
+    <input
+    class="form-control"
+    type="text"
+    formControlName="imagenProyectoUrl"
+    id="imagenProyectoUrl"
+  />
+</div>
+
+
+<div class="mb-3">
+    <label class="form-label" for="url">Url de proyecto</label>
+    <input
+    class="form-control"
+    type="text"
+    formControlName="url"
+    id="url"
+  />
+</div>
+<button type="submit" class="btn btn-success">Enviar</button> 
+<button type="button" style="margin-left: 5px" class="btn btn-danger "(click)="Cancelar()">Cancelar</button>
+</form>

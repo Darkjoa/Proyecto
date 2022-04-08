@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Experiencia } from 'src/app/Models/experiencia';
 import { ExperienciaService } from 'src/app/Service/experiencia.service';
+import { TokenService } from 'src/app/Service/token.service';
 import { FormExperienciaComponent } from '../form-experiencia/form-experiencia.component';
 
 @Component({
@@ -11,7 +12,12 @@ import { FormExperienciaComponent } from '../form-experiencia/form-experiencia.c
 export class ExperienciaListComponent{
   @ViewChild("formExperiencia") formExperiencia!: FormExperienciaComponent;
   @Input() experiencia:Experiencia[]=[];
-  constructor(private experienciaService: ExperienciaService) { }
+  isLogged = false;
+  isAdmin = false;
+  constructor(private experienciaService: ExperienciaService, private tokenService: TokenService) { 
+    this.isLogged = this.tokenService.isLogged();
+    this.isAdmin = this.tokenService.isAdmin();
+  }
 
   toggleFormExperiencia(){
     this.formExperiencia.toggleForm();

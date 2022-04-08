@@ -19,7 +19,7 @@ export class FormEstudiosComponent {
       id: [0],
       titulo: ['', [Validators.required]],
       escuela: ['', [Validators.required]],
-      nivel: ['', [Validators.required]],
+      nivel: ['', [Validators.required, Validators.min(1), Validators.max(100)]],
       inicio: [new Date(),[Validators.required]],
       final: [new Date(), [Validators.required]],
     });
@@ -47,6 +47,12 @@ export class FormEstudiosComponent {
     });
     this.mostrarFormulario = true;
   }
+  Cancelar(): void{
+    
+    this.form.reset();
+    this.mostrarFormulario=false;
+    
+   }
   toggleForm(){
     this.mostrarFormulario = !this.mostrarFormulario;
   }

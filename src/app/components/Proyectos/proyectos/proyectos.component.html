@@ -1,0 +1,8 @@
+<h3>{{proyectos.nombre}}</h3>
+<h3>{{proyectos.imagenProyectoUrl}}</h3>
+<h3>{{proyectos.url}}</h3>
+
+<div *ngIf="isAdmin">
+<td><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
+<td><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td>    
+  </div>

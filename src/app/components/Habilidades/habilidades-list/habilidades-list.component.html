@@ -1,5 +1,6 @@
+<div *ngIf="isAdmin">
 <button class="btn btn-success" (click)="toggleFormHabilidades()"> Nuevo</button>
-
+</div>
 <app-form-habilidades
 #formHabilidades
 (nuevaHabilidad)="crear($event)"

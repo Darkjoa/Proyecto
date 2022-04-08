@@ -23,6 +23,16 @@ body
     text-align: center;
 
 }
+.contenedor{
+    padding: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: justify;
+    color:white;
+    box-shadow: 3px 3px 10px rgb(102, 101, 101);
+    
+  }
 .nuevo{
     float:right;
 }

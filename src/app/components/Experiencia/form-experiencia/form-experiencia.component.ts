@@ -42,6 +42,12 @@ export class FormExperienciaComponent {
      });
      this.mostrarFormulario = true;
    }
+   Cancelar(): void{
+    
+    this.form.reset();
+    this.mostrarFormulario=false;
+    
+   }
    toggleForm(){
      this.mostrarFormulario = !this.mostrarFormulario;
    }
