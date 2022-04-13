@@ -59,5 +59,9 @@ else{
   }
   editarExperiencia(experiencia:Experiencia){
     this.formExperiencia.setExperiencia(experiencia);
+    this.toExperiencia();
+  }
+  toExperiencia(){
+    document.getElementById("experiencia")!.scrollIntoView();
   }
 }

@@ -1,6 +1,10 @@
-<circle-progress
-  [name]="habilidades.habilidad"
+<div class="contain">
+  <h4 class="titulo">{{habilidades.habilidad}}</h4>
+  <circle-progress 
   [percent]="habilidades.porcentaje"
+  [subtitle]="''"
+  [unitsColor]="'#ffffff'"
+  [titleColor]="'#ffffff'"
   [radius]="100"
   [outerStrokeWidth]="16"
   [innerStrokeWidth]="8"
@@ -9,7 +13,6 @@
   [animation]="true"
   [animationDuration]="300"
 ></circle-progress>
-
-
 <div *ngIf="isAdmin"><td><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
     <td ><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td></div>
+</div>

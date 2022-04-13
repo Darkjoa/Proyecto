@@ -7,11 +7,11 @@ import { FrontPageComponent } from './Front/front-page/front-page.component';
 import { GuardService } from './Service/Guards/guard.service';
 import { LoginGuard } from './Service/Guards/login.guard';
 const routes: Routes = [
-  { path: '', component: IndexComponent, canActivate:[GuardService], data:{expectedRol: ['admin', 'user']}},
-  { path: 'login', component: LoginComponent, canActivate:[LoginGuard]},
-  { path: 'registro', component: RegistroComponent , canActivate:[LoginGuard]},
-  {path:'Frente', component: FrontPageComponent, canActivate:[GuardService], data:{expectedRol: ['admin', 'user']}},
-  {path: '**', redirectTo: 'login', pathMatch: 'full'}
+  { path: 'index', component: IndexComponent, canActivate:[GuardService], data:{expectedRol: ['admin', 'user']}},
+  { path: '', component: LoginComponent, canActivate:[LoginGuard], data:{expectedRol: ['admin', 'user']}},
+  { path: 'registro', component: RegistroComponent, canActivate:[LoginGuard], data:{expectedRol: ['admin', 'user']}},
+  {path:'Frente', component: FrontPageComponent, canActivate:[GuardService],  data:{expectedRol: ['admin', 'user']}},
+  {path: '**', redirectTo: 'Frente', pathMatch: 'full'}
 ];
 
 @NgModule({

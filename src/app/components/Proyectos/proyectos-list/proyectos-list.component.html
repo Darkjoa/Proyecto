@@ -1,15 +1,18 @@
 <div *ngIf="isAdmin">
-<button class="btn btn-success" (click)="toggleFormProyectos()"> Nuevo</button>
+<button id="proyectos" class="btn btn-success" (click)="toggleFormProyectos()"> Nuevo</button>
 </div>
 
 <app-form-proyectos
+
 #formProyectos
 (nuevoProyecto)="crear($event)"
 ></app-form-proyectos>
-
-<app-proyectos
-*ngFor="let proyectos of proyectos"
-[proyectos]="proyectos"
-(borrarProyectos)="borrarProyecto($event)"
-(editarProyectos)="editarProyecto($event)"
-></app-proyectos>
+<div>
+    <div class="child" *ngFor="let proyectos of proyectos">
+        <app-proyectos
+        [proyectos]="proyectos"
+        (borrarProyectos)="borrarProyecto($event)"
+        (editarProyectos)="editarProyecto($event)"
+        ></app-proyectos>
+        </div>
+</div>

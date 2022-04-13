@@ -1,15 +1,19 @@
-    <h3>{{estudios.titulo}}</h3>
-    <br>
-    <td >{{estudios.escuela}}</td>
-    <br>
-    <!-- usamos el datepipe con formato utc para evitar problemas con la database -->
-    <td >{{estudios.inicio | date: 'dd/MM/yyyy':'UTC'}}</td>
-    <br>
-    <td >{{estudios.final | date: 'dd/MM/yyyy':'UTC'}}</td>
-    <br>
-
+<div class="contain">
+    <div class="child">
+        <p class="campo">Titulo: </p>
+        <p class="campo"> Institucion: </p> 
+        <p class="campo ">Fecha de ingreso: </p> 
+        <p class="campo ">Fecha de egreso: </p> 
+    </div>
+    <div class="child">
+        <p class="dato ">{{estudios.escuela}}</p>
+        <p class="dato " >{{estudios.titulo}}</p>
+        <!-- usamos el datepipe con formato utc para evitar problemas con la database -->
+        <p class="dato ">{{estudios.inicio | date: 'dd/MM/yyyy':'UTC'}}</p>  
+        <p class="dato ">{{estudios.final | date: 'dd/MM/yyyy': 'UTC'}} </p>  
+    </div>
     <div *ngIf="isAdmin">
     <button class="btn btn-outline-warning boton" (click)="editar()">Editar</button>
     <button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button>
     </div>
-    
+</div>

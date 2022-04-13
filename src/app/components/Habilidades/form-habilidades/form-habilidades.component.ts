@@ -19,7 +19,8 @@ export class FormHabilidadesComponent{
     this.form = this.formBuilder.group({
       id:[0],
       habilidad:['', [Validators.required]],
-      porcentaje:[0,[Validators.required]],
+      porcentaje:[0,[Validators.required, Validators.min(1),
+        Validators.max(100)]],
       tipo:['', [Validators.required]],
     });
    }

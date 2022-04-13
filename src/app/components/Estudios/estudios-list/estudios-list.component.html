@@ -1,27 +1,28 @@
 <div *ngIf="isAdmin">
-    <button class="btn btn-success" (click)="toggleFormEstudios()">Nuevo</button>    
+    <button id="estudios" class="btn btn-success" (click)="toggleFormEstudios()">Nuevo</button>    
 </div>
 
 <app-form-estudios
+
 #formEstudios
 (nuevoEstudio)="crear($event)"
 ></app-form-estudios>
-<h2>Nivel medio</h2>
-<div *ngFor="let estudios of estudios" >
-    
+
+<!--estudios medio-->    
+<h2 class="subtitulo">Nivel medio</h2>
+<div class="child" *ngFor="let estudios of nivel('Medio', estudios)">
 <app-estudios 
-*ngIf="estudios.nivel== 'Medio'"
 [estudios]="estudios"
 (borrarEstudios)="borrarEstudio($event)"
 (editarEstudios)="editarEstudio($event)"
 >
 </app-estudios>
 </div>
-<h2>Nivel Superior</h2>
-<div *ngFor="let estudios of estudios" >
-    
+<br>
+<!--estudios Superior-->
+<h2 class="subtitulo">Nivel Superior</h2>
+<div class="child" *ngFor="let estudios of nivel('Superior', estudios)">
 <app-estudios 
-*ngIf="estudios.nivel== 'Superior'"
 [estudios]="estudios"
 (borrarEstudios)="borrarEstudio($event)"
 (editarEstudios)="editarEstudio($event)"

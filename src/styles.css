@@ -1,5 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
 
+
+/* You can add global styles to this file, and also import other style files */
+.campo{
+    color: gold;
+}
+.dato{
+ color: cyan;  
+}
+.child {
+    display: inline-block;
+    padding: 10px;
+    
+  }
+  .logColor{
+    background-color: rgb(28, 28, 28);
+    color: gold;
+}
+.center {
+  margin-top: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.esquina{
+
+  float: right;
+}
+.DarkInput{
+  background-color: black; color: white;
+}
+.titulo{
+  text-align: center;
+  color:gold;
+}
+.subtitulo{
+  margin-left: 20px;
+  color: aqua;
+  
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
 body 
 {
     margin: 0;
@@ -10,7 +53,7 @@ body
 }
 
 .boton{
-    margin: 1px;
+    margin: 5px;    
 }
 .box{
     width: 300px;
@@ -31,6 +74,17 @@ body
     text-align: justify;
     color:white;
     box-shadow: 3px 3px 10px rgb(102, 101, 101);
+    
+  }
+
+  .contain{
+    padding: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: justify;
+    
+    box-shadow: 3px 3px 10px crimson;
     
   }
 .nuevo{

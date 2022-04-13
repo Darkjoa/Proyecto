@@ -1,15 +1,70 @@
 <div *ngIf="isAdmin">
-<button class="btn btn-success" (click)="toggleFormHabilidades()"> Nuevo</button>
+<button id="habilidades" class="btn btn-success" (click)="toggleFormHabilidades()"> Nuevo</button>
 </div>
 <app-form-habilidades
+
 #formHabilidades
 (nuevaHabilidad)="crear($event)"
 ></app-form-habilidades>
 
-<app-habilidades
-*ngFor="let habilidades of habilidades"
-[habilidades]="habilidades"
-(borrarHabilidad)="borrarHabilidad($event)"
-(editarHabilidad)="editarHabilidad($event)"
->
-</app-habilidades>
+<div>
+    <h3 class="subtitulo">Programacion</h3>
+    <div class="child" *ngFor="let habilidades of tipo('Programacion', habilidades)">
+        <app-habilidades
+        [habilidades]="habilidades"
+        (borrarHabilidad)="borrarHabilidad($event)"
+        (editarHabilidad)="editarHabilidad($event)"
+        >
+        </app-habilidades>
+        </div>        
+</div>
+<div>
+    <h3 class="subtitulo">Programacion Web</h3>
+    <div class="child" *ngFor="let habilidades of tipo('Programacion Web', habilidades)">
+        <app-habilidades
+        
+        [habilidades]="habilidades"
+        (borrarHabilidad)="borrarHabilidad($event)"
+        (editarHabilidad)="editarHabilidad($event)"
+        >
+        </app-habilidades>
+        </div>    
+</div>
+<div>
+    <h3 class="subtitulo">Base de datos</h3>
+    <div class="child" *ngFor="let habilidades of tipo('Base de datos', habilidades)">
+            <app-habilidades
+            
+            [habilidades]="habilidades"
+            (borrarHabilidad)="borrarHabilidad($event)"
+            (editarHabilidad)="editarHabilidad($event)"
+            >
+            </app-habilidades>
+    </div>    
+</div>
+
+<div>
+    <h3 class="subtitulo">Idiomas</h3>
+    <div class="child" *ngFor="let habilidades of tipo('Idiomas', habilidades)">
+        <app-habilidades
+        
+        [habilidades]="habilidades"
+        (borrarHabilidad)="borrarHabilidad($event)"
+        (editarHabilidad)="editarHabilidad($event)"
+        >
+        </app-habilidades>
+    </div>
+    
+</div>
+<div>
+    <h3 class="subtitulo">Otras habilidades</h3>
+    <div class="child" *ngFor="let habilidades of tipo('Otros', habilidades)">
+        <app-habilidades
+        
+        [habilidades]="habilidades"
+        (borrarHabilidad)="borrarHabilidad($event)"
+        (editarHabilidad)="editarHabilidad($event)"
+        >
+        </app-habilidades>
+    </div>
+</div>

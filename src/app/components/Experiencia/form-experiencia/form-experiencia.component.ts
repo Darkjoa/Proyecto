@@ -18,8 +18,8 @@ export class FormExperienciaComponent {
       id:[0],
       empresa:['', [Validators.required]],
       cargo:['', [Validators.required]],
-      inicio:[new Date(), [Validators.required]],
-      final:[new Date(), [Validators.required]]
+      inicio:['', [Validators.required,]],
+      final:['', [Validators.required, Validators.min]]
     })
    }
    onSubmit(event: Event){

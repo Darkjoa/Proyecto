@@ -21,6 +21,10 @@ export class EstudiosListComponent{
     this.formEstudios.toggleForm();
   }
   
+  nivel(nivel: string, lista: Estudios[]){
+    return lista.filter((estudios)=> estudios.nivel ===nivel)
+  }
+
   crear(estudios: Estudios){
   if(estudios.id){
     this.estudiosService.update(estudios)
@@ -54,6 +58,9 @@ export class EstudiosListComponent{
   }
   editarEstudio(estudios:Estudios){
     this.formEstudios.setEstudio(estudios);
-    
+    this.toEstudios();
+  }
+  toEstudios(){
+    document.getElementById("estudios")!.scrollIntoView()
   }
 }

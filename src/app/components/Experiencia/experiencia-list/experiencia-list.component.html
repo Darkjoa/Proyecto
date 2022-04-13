@@ -1,16 +1,19 @@
-<div *ngIf="isAdmin">
+<div id="experiencia" *ngIf="isAdmin">
     <button class="btn btn-success" (click)="toggleFormExperiencia()"> Nuevo</button>
 </div>
 
 <app-form-experiencia
+
 #formExperiencia
 (nuevaExperiencia)="crear($event)"
 >
 </app-form-experiencia>
 
-<app-experiencia 
-*ngFor="let experiencia of experiencia"
+<div class="child" *ngFor="let experiencia of experiencia">
+    
+    <app-experiencia 
 [experiencia]="experiencia"
 (borrarExperiencia)="borrarExperiencia($event)"
 (editarExperiencia)="editarExperiencia($event)"
 ></app-experiencia>
+</div>

@@ -15,17 +15,23 @@ export class LoginComponent implements OnInit {
   loginUsuario!: LoginUsuario;
   nombreUsuario!: string;
   password!: string;
-
-  errMsj!: string;
-
+  isLogged = false;
+  
   constructor(
     private tokenService: TokenService,
     private authService: AuthService,
     private router: Router,
     private toastr: ToastrService
-  ) { }
+  ) {}
 
   ngOnInit() {
+    
+  }
+
+  invitado(){
+    this.nombreUsuario ="user";
+    this.password = "user";
+    this.onLogin()
   }
 
   onLogin(): void {
@@ -33,15 +39,13 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginUsuario).subscribe(
       data => {
         this.tokenService.setToken(data.token);
-        this.router.navigate(['/']);
+        this.router.navigate(['/index']);
       },
       err => {
-        this.errMsj = err.error.message;
-        this.toastr.error(this.errMsj, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
+        this.toastr.error('Credenciales incorrectas','Error',  {
+          timeOut: 1000,  positionClass: 'toast-top-center',
         });
       }
     );
   }
-
 }

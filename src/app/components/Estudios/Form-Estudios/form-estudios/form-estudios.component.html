@@ -4,17 +4,17 @@
 <div class="mb-3">
     <label class="form-label" for="titulo">Titulo</label>
     <input
-    class="form-control"
+    class="form-control DarkInput"
     type="titulo"
     formControlName="titulo"
     id="titulo"
   />
 </div>
 <div class="mb-3">
-    <label class="form-label" for="escuela">Escuela</label>
-    <input
-    class="form-control"
-    type="escuela"
+    <label class="form-label " for="escuela">Escuela/Institucion</label>
+    <input 
+    class="form-control DarkInput"
+    type="text"
     formControlName="escuela"
     id="escuela"
   />
@@ -22,7 +22,7 @@
 <div class="mb-3">
     <label for="nivel">Nivel del titulo</label>
     <select name="OS" 
-    class="form-control" 
+    class="form-control DarkInput" 
     id ="nivel" 
     formControlName ="nivel">
         <option value="Medio">Medio</option> 
@@ -30,9 +30,9 @@
     </select>
 </div>
 <div class="mb-3">
-    <label for="inicio">Fecha de inicio</label>
+    <label for="inicio" >Fecha de inicio</label>
     <input 
-    class="form-control"
+    class="form-control DarkInput"
     type="date" 
     id ="inicio" 
     formControlName="inicio"
@@ -41,9 +41,10 @@
 <div class="mb-3">
     <label for="final">Fecha de egreso</label>
     <input 
-    class="form-control"
+    class="form-control DarkInput"
     type="date" 
-    id ="final" 
+    id ="final"
+    onchange="console.log(this.value);"
     formControlName="final"
     >  
 </div>

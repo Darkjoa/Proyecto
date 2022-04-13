@@ -1,4 +1,5 @@
 export interface  Estudios {
+    
     id?: number;
     titulo: String;
     escuela: String;

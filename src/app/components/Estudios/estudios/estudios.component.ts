@@ -9,6 +9,7 @@ import { TokenService } from 'src/app/Service/token.service';
 })
 export class EstudiosComponent{
 @Input() estudios!:Estudios;
+
 @Output() borrarEstudios: EventEmitter <number> = new EventEmitter();
 @Output() editarEstudios: EventEmitter <Estudios> = new EventEmitter();
 isLogged = false;
@@ -28,6 +29,5 @@ isAdmin = false;
     if(this.isAdmin){
       this.editarEstudios.emit(this.estudios);
     }
-    
   }
 }

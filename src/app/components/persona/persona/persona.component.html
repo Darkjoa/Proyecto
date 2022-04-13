@@ -1,4 +1,12 @@
 <div >
+  <div class="arPro">
+    <div class="child">
+      <img  src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1648503444/APLogo-20-20.png" alt="Argentina Programa" height="80px" >
+    </div>
+    <div class="child">
+      <h3>#YoProgramo</h3>
+    </div>
+  </div>
   <nav 
   class="navbar navbar-expand-xl navbar-dark bg-dark back" 
   style="background-image: url({{persona.portadaImaUrl}});"
@@ -12,6 +20,13 @@
         </div>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <app-social-lista [social]="persona.social"></app-social-lista>
+        
+        <div class="selectores">
+        <button class="btn btn-outline-warning selector" (click)="toEstudiosExperiencia()">Estudios/Experiencia</button>
+        <button class="btn btn-outline-warning selector"(click)="toHabilidades()">Habilidades</button>
+        <button class="btn btn-outline-warning selector" (click)="toSobreMi()">Sobre mi</button>
+        <button class="btn btn-outline-warning selector"(click)="toProyectos()">Proyectos</button>
+        </div>
       </div>
       <br>
       <div class="collapse navbar-collapse show" id="navbarBasic">
@@ -24,46 +39,56 @@
           </li>
         </ul>
         <form class="d-flex">
-          <button  *ngIf="!isLogged" class="btn btn-outline-success" style="height:50px; width:120px; border-radius: 30px; font-size:15px" routerLink="/login">Iniciar Sesión</button>
+          <button  *ngIf="!isLogged" class="btn btn-outline-success" style="height:50px; width:120px; border-radius: 30px; font-size:15px" routerLink="">Iniciar Sesión</button>
           <button  *ngIf="isLogged" class="btn btn-outline-danger" style="height:50px; width:120px; border-radius: 30px; font-size:15px" (click)="onLogOut()" type="reset">Cerrar Sesión</button>
         </form>
       </div>
     </div>
+    
   </nav>
+  
 </div>
 <div class="container-fluid ">
-	<div class="row">
-		<div class="col-md-6 contenedor">
-      <h4>Estudios</h4>
-      <app-estudios-list [estudios]="persona.estudios"></app-estudios-list>
-		</div>
-		<div class="col-md-6 contenedor">
-      <h4>Experiencia laboral</h4>
-<app-experiencia-list [experiencia]="persona.experiencia"> ></app-experiencia-list>
-		</div>
-	</div>
+  <section id="estudios_experiencia">
+    <div class="row">
+      <div class="col-md-6 contenedor">
+        <br>
+        <h2 class="titulo">Estudios</h2>
+        <app-estudios-list [estudios]="persona.estudios"></app-estudios-list>
+      </div>
+      <div class="col-md-6 contenedor">
+        <br>
+        <h2 class="titulo">Experiencia laboral</h2>
+  <app-experiencia-list [experiencia]="persona.experiencia"> ></app-experiencia-list>
+      </div>
+    </div>
+  </section>
   <br>
-	<div class="row">
-		<div class="col-md-12 contenedor">
-      <h2>Habilidades</h2>
-<app-habilidades-list [habilidades]="persona.habilidades"></app-habilidades-list>
-		</div>
-	</div>
+
+  <section id="habilidades">
+    <div class="row">
+      <div class="col-md-12 contenedor">
+        <br>
+        <h2 class="titulo">Habilidades</h2>
+  <app-habilidades-list [habilidades]="persona.habilidades"></app-habilidades-list>
+      </div>
+    </div>
+  </section>
   <br>
-	<div class="row">
-		<div class="col-md-12 contenedor">
-      <h4>Sobre mi</h4>
-<app-sobremi-list [sobremi]="persona.sobremi"></app-sobremi-list>
-		</div>
-	</div>
-  <br>
+  <section id="sobremi">
+    <div class="row">
+      <div class="col-md-12 contenedor">
+        <h2 class="titulo">Sobre mi</h2>
+  <app-sobremi-list [sobremi]="persona.sobremi"></app-sobremi-list>
+      </div>
+    </div>
+    <br>
+  </section>
   <div class="row">
 		<div class="col-md-12 contenedor">
-      <h4>Proyectos en los que trabaje/trabajo</h4>
+      <h4 class="titulo">Proyectos en los que trabaje/trabajo</h4>
   <app-proyectos-list [proyectos]="persona.proyectos"></app-proyectos-list>
 </div>
 </div>
-
-
-
-
+  <section id="proyectos"></section>
+	

@@ -44,6 +44,10 @@ isAdmin = false;
     });
   }
 
+  tipo(tipo: string, lista: Habilidades[])
+  {
+    return lista.filter((habilidades)=> habilidades.tipo === tipo)
+  }
 
   ActualizarHabilidad(habilidades:Habilidades){
     for(let i=0; i<this.habilidades.length; i++){
@@ -55,5 +59,9 @@ isAdmin = false;
   }
   editarHabilidad(habilidades:Habilidades){
     this.formHabilidades.setHabilidad(habilidades);
+    this.toHabilidades();
+  }
+  toHabilidades(){
+    document.getElementById("habilidades")!.scrollIntoView();
   }
 }

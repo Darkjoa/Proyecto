@@ -1,14 +1,20 @@
-
-<h3>{{experiencia.cargo}}</h3>
-<br>
-<td>{{experiencia.empresa}}</td>
-<br>
-<td >{{experiencia.inicio | date: 'dd/MM/yyyy':'UTC'}}</td>
-<br>
-<td >{{experiencia.final | date: 'dd/MM/yyyy':'UTC'}}</td>
-<br>
-<div *ngIf="isAdmin">
-<td><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
-<td><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td>
+<div class="contain">
+    <div class="child">
+        <p class="campo">Cargo: </p>
+        <p class="campo">Empresa: </p>
+        <p class="campo">Fecha de contratacion: </p>
+        <p class="campo">Fecha de finalización de contrato: </p>
+    </div>
+    <div class="child">
+        <p class="dato">{{experiencia.cargo}}</p>
+        <p class="dato">{{experiencia.empresa}}</p>
+        <p class="dato">{{experiencia.inicio | date: 'dd/MM/yyyy':'UTC'}}</p>
+        <p class="dato">{{experiencia.final | date: 'dd/MM/yyyy':'UTC'}}</p>
+    </div>
+    <div *ngIf="isAdmin">
+        <td><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
+        <td><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td>
+        </div>
 </div>
+
 

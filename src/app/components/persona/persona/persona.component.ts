@@ -42,4 +42,17 @@ export class PersonaComponent {
   onLogOut(): void {
     this.tokenService.logOut();
   }
+
+  toEstudiosExperiencia(){
+    document.getElementById("estudios_experiencia")!.scrollIntoView()
+  }
+  toHabilidades(){
+    document.getElementById("habilidades")!.scrollIntoView()
+  }
+  toSobreMi(){
+    document.getElementById("sobremi")!.scrollIntoView()
+  }
+  toProyectos(){
+    document.getElementById("proyectos")!.scrollIntoView()
+  }
 }

@@ -47,6 +47,10 @@ isAdmin = false;
   }
   editarSobremi(sobremi:Sobremi){
     this.formSobreMi.setSobremi(sobremi);
+    this.toSobremi();
+  }
+  toSobremi(){
+    document.getElementById("sobremi")!.scrollIntoView();
   }
 
 }

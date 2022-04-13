@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import{interceptorProvider} from './Service/interceptors/interceptor.service'
@@ -44,6 +45,9 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { ProyectosComponent } from './components/Proyectos/proyectos/proyectos.component';
 import { ProyectosListComponent } from './components/Proyectos/proyectos-list/proyectos-list.component';
 import { FormProyectosComponent } from './components/Proyectos/form-proyectos/form-proyectos.component';
+import { registerLocaleData } from '@angular/common';
+import localeEsAr from '@angular/common/locales/es-AR';
+registerLocaleData(localeEsAr);
 
 @NgModule({
   declarations: [
@@ -78,7 +82,7 @@ import { FormProyectosComponent } from './components/Proyectos/form-proyectos/fo
     
   ],
   imports: [
-
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -100,7 +104,7 @@ import { FormProyectosComponent } from './components/Proyectos/form-proyectos/fo
         })
 
   ],
-  providers: [interceptorProvider],
+  providers: [interceptorProvider, { provide: LOCALE_ID, useValue: "es-AR" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

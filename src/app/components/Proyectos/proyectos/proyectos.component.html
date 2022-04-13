@@ -1,8 +1,12 @@
-<h3>{{proyectos.nombre}}</h3>
-<h3>{{proyectos.imagenProyectoUrl}}</h3>
-<h3>{{proyectos.url}}</h3>
-
+<div class="contain">
+  <a class="button btn btn-outline-success esquina" href={{proyectos.url}} style="text-decoration: none;">Ir a Proyecto</a>
+  <br>
+  <img src="{{proyectos.imagenProyectoUrl}}" alt="{{proyectos.nombre}}" height="300px" class="center">
+  <br>
+  <h3 class="titulo" style="text-align:center;">{{proyectos.nombre}}</h3>
 <div *ngIf="isAdmin">
+  <br>
 <td><button class="btn btn-outline-warning boton" (click)="editar()">Editar</button></td>
 <td><button class="btn btn-outline-danger boton" (click)="borrar()">Eliminar</button></td>    
   </div>
+</div>

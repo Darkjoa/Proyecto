@@ -1,3 +1,6 @@
+
+
+import { DatePipe, formatDate } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Estudios } from 'src/app/Models/estudios';
@@ -15,13 +18,14 @@ export class FormEstudiosComponent {
   form: FormGroup;
   
   constructor(private formBuilder: FormBuilder) {
+    
     this.form = this.formBuilder.group({
       id: [0],
       titulo: ['', [Validators.required]],
       escuela: ['', [Validators.required]],
       nivel: ['', [Validators.required, Validators.min(1), Validators.max(100)]],
-      inicio: [new Date(),[Validators.required]],
-      final: [new Date(), [Validators.required]],
+      inicio: ['', [Validators.required]],
+      final: ['',  [Validators.required]],
     });
    }
 
@@ -35,26 +39,24 @@ export class FormEstudiosComponent {
       console.log('form invalido')
     }
   }
-  
   setEstudio(estudios: Estudios){
+    
+    
     this.form.patchValue({
       id: estudios.id,
       titulo: estudios.titulo,
       escuela: estudios.escuela,
       nivel: estudios.nivel,
-      inicio: estudios.inicio,
-      final: estudios.final,
+      inicio: estudios.inicio, 
+      final: estudios.final, 
     });
     this.mostrarFormulario = true;
   }
   Cancelar(): void{
-    
     this.form.reset();
-    this.mostrarFormulario=false;
-    
+    this.mostrarFormulario=false; 
    }
   toggleForm(){
     this.mostrarFormulario = !this.mostrarFormulario;
   }
-
 }

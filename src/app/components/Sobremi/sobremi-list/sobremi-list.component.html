@@ -3,12 +3,15 @@
 </div>
 
 <app-form-sobremi
+id="sobremi"
 #formSobreMi
 (nuevoSobremi)="crear($event)"
 ></app-form-sobremi>
+<div class="child" *ngFor="let sobremi of sobremi" >
 <app-sobremi
-*ngFor="let sobremi of sobremi"
+
 [sobremi]="sobremi"
 (borrarSobremi)="borrarSobremi($event)"
 (editarSobremi)="editarSobremi($event)"
 ></app-sobremi>
+</div>

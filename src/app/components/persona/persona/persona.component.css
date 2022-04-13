@@ -37,6 +37,8 @@ min-height: 20vh;
     border-radius: 15px;
     font-size: 30px;
     padding: 5px;
+    margin-top: 40px;
+    display: inline-table;
     
 }
 footer {
@@ -46,4 +48,13 @@ footer {
   position: absolute;
   margin-bottom: 0;
   left: 0;
+}
+.selector{
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right:5px;
+}
+.selectores{
+  margin-top: 60px;
+  
 }

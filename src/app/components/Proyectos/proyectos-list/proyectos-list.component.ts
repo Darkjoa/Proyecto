@@ -49,5 +49,9 @@ export class ProyectosListComponent {
 
   editarProyecto(proyectos: Proyectos){
     this.formProyectos.setProyecto(proyectos);
+    this.toProyectos();
+  }
+  toProyectos(){
+    document.getElementById("proyectos")!.scrollIntoView();
   }
 }
