@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Persona } from 'src/app/Models/persona';
@@ -29,7 +28,6 @@ export class FormPersonaComponent{
       this.nuevaPersona.emit(this.form.value);
        this.form.reset();
        this.mostrarFormulario=false; 
-       location.reload();
      }else{
        console.log('form invalido')
      }
@@ -40,7 +38,6 @@ export class FormPersonaComponent{
    }
    setPersona(persona: Persona){
      this.form.patchValue({
-       
        id: persona.id,
        nombre: persona.nombre,
        apellido: persona.apellido,

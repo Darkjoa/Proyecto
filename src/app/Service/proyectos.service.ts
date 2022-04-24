@@ -7,7 +7,7 @@ import { Proyectos } from '../Models/proyectos';
     providedIn: 'root'
   })
   export class ProyectosService {
-      ProyectosURL = 'http://localhost:8080/proyectos/'
+      ProyectosURL = 'https://portfoliobackjoaquin.herokuapp.com/proyectos/'
       constructor(private httpClient: HttpClient) { }
 
       public verProyectos():Observable<Proyectos[]> {

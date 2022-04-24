@@ -9,10 +9,8 @@ import { Estudios } from '../Models/estudios';
 export class EstudiosService {
 
   //se conecta el service
-  EstudiosURL = 'http://localhost:8080/estudios/'
+  EstudiosURL = 'https://portfoliobackjoaquin.herokuapp.com/estudios/'
   constructor(private httpClient: HttpClient) { }
-
-
   //metodos de backend de la clase estudiosController
   //Ver estudios
   public verEstudios():Observable<Estudios[]> {

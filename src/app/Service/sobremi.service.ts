@@ -9,7 +9,7 @@ import {Sobremi} from '../Models/sobremi'
 export class SobremiService {
 
  //se conecta el service
- SobreMiUrl = 'http://localhost:8080/sobremi/'
+ SobreMiUrl = 'https://portfoliobackjoaquin.herokuapp.com/sobremi/'
  constructor(private httpClient: HttpClient) { }
 
 

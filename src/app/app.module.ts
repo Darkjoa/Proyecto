@@ -15,7 +15,6 @@ import { FrontPageComponent } from './Front/front-page/front-page.component';
 //Persona
 import { PersonaComponent } from './components/persona/persona/persona.component';
 import { FormPersonaComponent } from './components/persona/form-persona/form-persona.component';
-import { PersonaListComponent } from './components/persona/persona-list/persona-list.component';
 
 //Estudios
 import { EstudiosComponent } from './components/Estudios/estudios/estudios.component';
@@ -57,7 +56,6 @@ registerLocaleData(localeEsAr);
     EstudiosComponent,
     PersonaComponent,
     FormPersonaComponent,
-    PersonaListComponent,
     FooterComponent,
     FrontPageComponent,
     ExperienciaComponent,

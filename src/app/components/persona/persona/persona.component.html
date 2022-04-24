@@ -1,4 +1,10 @@
-<div >
+<app-form-persona
+id="persona"
+#formPersona
+(nuevaPersona)="crear($event)"
+>
+</app-form-persona>
+<div>
   <div class="arPro">
     <div class="child">
       <img  src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1648503444/APLogo-20-20.png" alt="Argentina Programa" height="80px" >
@@ -20,7 +26,6 @@
         </div>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <app-social-lista [social]="persona.social"></app-social-lista>
-        
         <div class="selectores">
         <button class="btn btn-outline-warning selector" (click)="toEstudiosExperiencia()">Estudios/Experiencia</button>
         <button class="btn btn-outline-warning selector"(click)="toHabilidades()">Habilidades</button>

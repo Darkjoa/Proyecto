@@ -11,7 +11,7 @@ import { Experiencia } from '../Models/experiencia';
 export class ExperienciaService {
 
  //se conecta el service
- ExperienciaURL = 'http://localhost:8080/experiencia/'
+ ExperienciaURL = 'https://portfoliobackjoaquin.herokuapp.com/experiencia/'
  constructor(private httpClient: HttpClient) { }
 
 

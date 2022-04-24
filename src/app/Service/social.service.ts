@@ -10,7 +10,7 @@ import { Social } from '../Models/social';
 export class SocialService {
 
  //se conecta el service
- SocialUrl = 'http://localhost:8080/social/'
+ SocialUrl = 'https://portfoliobackjoaquin.herokuapp.com/social/'
  constructor(private httpClient: HttpClient) { }
 
 

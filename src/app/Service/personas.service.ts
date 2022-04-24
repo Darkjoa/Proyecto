@@ -10,7 +10,7 @@ import { Persona } from '../Models/persona';
 export class PersonasService {
 
   //se conecta el service
-  personaURL = 'http://localhost:8080/persona/'
+  personaURL = 'https://portfoliobackjoaquin.herokuapp.com/persona/'
   constructor(private httpClient: HttpClient) { }
 
 
