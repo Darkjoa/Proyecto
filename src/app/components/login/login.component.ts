@@ -28,6 +28,10 @@ export class LoginComponent implements OnInit {
     
   }
 
+
+
+  
+
   invitado(){
     this.nombreUsuario ="user";
     this.password = "user";
@@ -38,8 +42,10 @@ export class LoginComponent implements OnInit {
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
     this.authService.login(this.loginUsuario).subscribe(
       data => {
+        this.toastr.success("Iniciando sesion, espere un momento")
         this.tokenService.setToken(data.token);
         this.router.navigate(['/index']);
+
       },
       err => {
         this.toastr.error('Credenciales incorrectas','Error',  {
