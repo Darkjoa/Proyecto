@@ -27,22 +27,20 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     
   }
-
-
-
-  
-
   invitado(){
-    this.nombreUsuario ="user";
-    this.password = "user";
+    this.nombreUsuario ="User";
+    this.password = "User";
     this.onLogin()
   }
 
   onLogin(): void {
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
+    this.toastr.success("Iniciando sesion, espere un momento"),  {
+      timeOut: 1000,  positionClass: 'toast-top-center'}
     this.authService.login(this.loginUsuario).subscribe(
+      
       data => {
-        this.toastr.success("Iniciando sesion, espere un momento")
+        
         this.tokenService.setToken(data.token);
         this.router.navigate(['/index']);
 

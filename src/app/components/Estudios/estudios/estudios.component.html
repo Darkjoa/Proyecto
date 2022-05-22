@@ -6,8 +6,8 @@
         <p class="campo ">Fecha de egreso: </p> 
     </div>
     <div class="child">
-        <p class="dato ">{{estudios.escuela}}</p>
-        <p class="dato " >{{estudios.titulo}}</p>
+        <p class="dato ">{{estudios.titulo}}</p>
+        <p class="dato " >{{estudios.escuela}}</p>
         <!-- usamos el datepipe con formato utc para evitar problemas con la database -->
         <p class="dato ">{{estudios.inicio | date: 'dd/MM/yyyy':'UTC'}}</p>  
         <p class="dato ">{{estudios.final | date: 'dd/MM/yyyy': 'UTC'}} </p>  

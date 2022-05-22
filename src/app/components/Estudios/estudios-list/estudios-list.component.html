@@ -9,8 +9,8 @@
 ></app-form-estudios>
 
 <!--estudios medio-->    
-<h2 class="subtitulo">Nivel medio</h2>
-<div class="child" *ngFor="let estudios of nivel('Medio', estudios)">
+<h2 class="subtitulo">Nivel Superior</h2>
+<div class="child" *ngFor="let estudios of nivel('Superior', estudios)">
 <app-estudios 
 [estudios]="estudios"
 (borrarEstudios)="borrarEstudio($event)"
@@ -20,8 +20,8 @@
 </div>
 <br>
 <!--estudios Superior-->
-<h2 class="subtitulo">Nivel Superior</h2>
-<div class="child" *ngFor="let estudios of nivel('Superior', estudios)">
+<h2 class="subtitulo">Nivel Medio</h2>
+<div class="child" *ngFor="let estudios of nivel('Medio', estudios)">
 <app-estudios 
 [estudios]="estudios"
 (borrarEstudios)="borrarEstudio($event)"
