@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
     
   }
   invitado(){
-    this.nombreUsuario ="User";
-    this.password = "User";
+    this.nombreUsuario ="user";
+    this.password = "user";
     this.onLogin()
   }
 
